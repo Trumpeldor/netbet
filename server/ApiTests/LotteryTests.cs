@@ -6,20 +6,20 @@ using Xunit;
 
 namespace ApiTests
 {
-    public class AdsTests
+    public class LotteryTests
     {
         [Fact]
         public void AdsService_GetAdsSync()
         {
             //Arrange
-            var mock = new Mock<ILogger<AdsController>>();
+            var mock = new Mock<ILogger<LotteryController>>();
 
             //Act
-            var service = new AdsController(mock.Object);
+            var service = new LotteryController(mock.Object);
             var result = service.Get();
 
             //Assert
-            var arrResult = result as Ads[];
+            var arrResult = result as Lottery[];
             Assert.NotNull(arrResult);
             Assert.Equal(2, arrResult.Length);
             Assert.Equal(422, arrResult[0].Prize);

@@ -1,6 +1,6 @@
-import { combineReducers, createStore } from "redux";
-import ads from "./reducers/ads";
+import { combineReducers, createStore } from 'redux';
+import lotteries from './reducers/lotteries';
 
 export default createStore(combineReducers({
-  ads
+  lotteries
 }));
