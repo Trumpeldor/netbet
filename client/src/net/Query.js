@@ -3,14 +3,11 @@ import store from '../store';
 import Actions from '../store/actions/ads';
 import server from './server.json';
 
-const getUrl = () => {
-  return `${server.https.apiBaseUrl}/ads`;
-}
-
-export async function execute(request) {
-  const jsonArr = await Rest.GET(getUrl(request));
+export async function execute() {
+  const jsonArr = await Rest.GET(`${server.https.apiBaseUrl}/ads`);
   const { dispatch } = store;
-  const data = jsonArr.map(o => [
-  ]);
+  const data = jsonArr.map((o, id) => {
+    return { ...o, id, millis: Date.parse(o.date) };
+  });
   dispatch(Actions.refresh(data));
 }
