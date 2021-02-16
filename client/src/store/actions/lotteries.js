@@ -1,21 +1,27 @@
 const clear = () => ({
-  type: "CLEAR"
+  type: 'CLEAR'
 });
 
 const refresh = (data) => ({
-  type: "REFRESH",
+  type: 'REFRESH',
   payload: data
 });
 
-const remove = (date) => ({
-  type: "REMOVE",
-  payload: date
+const remove = (id) => ({
+  type: 'REMOVE',
+  payload: id
+});
+
+const sort = (prop, ascending) => ({
+  type: 'SORT',
+  payload: { prop, ascending }
 });
 
 const actions = {
   clear,
   refresh,
-  remove
+  remove,
+  sort
 }
 
 export default actions;

@@ -6,10 +6,10 @@ namespace Api.Models
     {
         public string Event { get; set; }
 
-        public int Prize { get; set; }
+        public int Jackpot { get; set; }
 
         public string Currency { get; set; }
 
-        public DateTime Date { get; set; }
+        public DateTime Closing { get; set; }
     }
 }

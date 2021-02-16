@@ -22,7 +22,7 @@ namespace ApiTests
             var arrResult = result as Lottery[];
             Assert.NotNull(arrResult);
             Assert.Equal(2, arrResult.Length);
-            Assert.Equal(422, arrResult[0].Prize);
+            Assert.Equal(422, arrResult[0].Jackpot);
             Assert.Equal("€", arrResult[1].Currency);
         }
     }

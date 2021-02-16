@@ -7,7 +7,7 @@ export async function execute() {
   const jsonArr = await Rest.GET(`${server.https.apiBaseUrl}/lottery`);
   const { dispatch } = store;
   const data = jsonArr.map((o, id) => {
-    return { ...o, id, millis: Date.parse(o.date) };
+    return { ...o, id, closing: Date.parse(o.closing) };
   });
   dispatch(Actions.refresh(data));
 }

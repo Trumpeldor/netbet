@@ -5,7 +5,7 @@ import Actions from '../../store/actions/lotteries';
 import Utils from '../../utils/Utils';
 import './index.css';
 
-function Form({ lotteries, clear }) {
+function Form({ lotteries, clear, sort }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     execute();
@@ -14,6 +14,8 @@ function Form({ lotteries, clear }) {
   return (
     <form onSubmit={handleSubmit}>
       <button title='Clear' disabled={empty} type='button' onClick={clear}>Clear</button>
+      <button title='Sort by prize' disabled={empty} type='button' onClick={() => sort('jackpot', false)}>Sort by prize</button>
+      <button title='Sort by closing time' disabled={empty} type='button' onClick={() => sort('closing', true)}>Sort by closing time</button>
       <input title='Submit' disabled={!empty} type='submit' value='Submit' />
     </form>
   );
@@ -24,6 +26,7 @@ export default connect(
     lotteries: state.lotteries
   }),
   dispatch => ({
-    clear: () => dispatch(Actions.clear())
+    clear: () => dispatch(Actions.clear()),
+    sort: (prop, ascending) => dispatch(Actions.sort(prop, ascending))
   })
 )(Form)
