@@ -7,9 +7,15 @@ const refresh = (data) => ({
   payload: data
 });
 
+const remove = (date) => ({
+  type: "REMOVE",
+  payload: date
+});
+
 const actions = {
   clear,
-  refresh
+  refresh,
+  remove
 }
 
 export default actions;

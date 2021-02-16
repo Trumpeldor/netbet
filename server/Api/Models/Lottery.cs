@@ -2,7 +2,7 @@ using System;
 
 namespace Api.Models
 {
-    public class Ads
+    public class Lottery
     {
         public string Event { get; set; }
 
