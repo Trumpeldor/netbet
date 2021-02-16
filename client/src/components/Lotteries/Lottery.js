@@ -40,12 +40,13 @@ function Lottery({ lottery: { event, prize, currency, date, id, millis }, remove
           <tr>
             <td>
               <label>{currency}</label>
-              <label className="prize">{prize}</label>
+              <label className="prize">{prize} </label>
+              <label>Million</label>
             </td>
           </tr>
           <tr>
             <td>
-              <input title='Play Now' type='submit' value='Play Now' />
+              <input className="play-now" title='Play Now' type='submit' value='PLAY NOW' />
             </td>
           </tr>
           <tr>
