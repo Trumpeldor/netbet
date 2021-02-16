@@ -1,0 +1,14 @@
+.ads {
+  display: inline-block;
+  width: 50%;
+}
+
+table {
+  width: 100%;
+  border-radius: 5px;
+  background-color: orange;
+}
+
+.prize {
+  font-weight: bold;
+}
