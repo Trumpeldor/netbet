@@ -11,8 +11,8 @@ const reducer = (state = initialState, action) => {
       copy.splice(copy.findIndex(o => o.id === action.payload), 1);
       return copy;
     case 'SORT':
-      const { prop, ascending } = action.payload; 
-      copy.sort((a, b) => ascending ? a[prop] > b[prop] : a[prop] < b[prop]);
+      const { prop, ascending } = action.payload;
+      copy.sort((a, b) => ascending ? a[prop] - b[prop] : b[prop] - a[prop]);
       return copy;
     default:
       return state;
