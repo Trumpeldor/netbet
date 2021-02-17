@@ -27,7 +27,7 @@ function Lotteries({ lotteries }) {
         leftChevron={'<'}
         outsideChevron={false}
       >
-      {lotteries.filter(lottery => lottery.millis > now).map((lottery) => {
+      {lotteries.filter(lottery => lottery.closing > now).map((lottery) => {
         return (
           <Lottery lottery={lottery} key={lottery.id} />
         );

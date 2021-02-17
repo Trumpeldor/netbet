@@ -8,7 +8,7 @@ const reducer = (state = initialState, action) => {
     case 'REFRESH':
       return initialState.concat(action.payload);
     case 'REMOVE':
-      copy.splice(copy.findIndex(o => o.date === action.payload), 1);
+      copy.splice(copy.findIndex(o => o.id === action.payload), 1);
       return copy;
     case 'SORT':
       const { prop, ascending } = action.payload; 

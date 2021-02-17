@@ -7,9 +7,9 @@ const refresh = (data) => ({
   payload: data
 });
 
-const remove = (date) => ({
+const remove = (id) => ({
   type: 'REMOVE',
-  payload: date
+  payload: id
 });
 
 const sort = (prop, ascending) => ({

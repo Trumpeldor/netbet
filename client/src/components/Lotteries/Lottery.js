@@ -4,8 +4,8 @@ import Utils from '../../utils/Utils';
 import Actions from '../../store/actions/lotteries';
 import './index.css';
 
-function Lottery({ lottery: { event, prize, currency, date, id, millis }, remove }) {
-	const [timeLeft, setTimeLeft] = useState(millis - new Date().getTime());
+function Lottery({ lottery: { event, jackpot, currency, closing, id }, remove }) {
+	const [timeLeft, setTimeLeft] = useState(closing - new Date().getTime());
   const handleSubmit = (e) => {
     e.preventDefault();
     alert('Mock: call some API to play now in ' + event + '!');
@@ -18,7 +18,7 @@ function Lottery({ lottery: { event, prize, currency, date, id, millis }, remove
           setTimeLeft(timeLeft - 1000);
         } else {
           clearTimeout(timer);
-          remove(date);
+          remove(id);
         }
       }
     }, 1000);
@@ -40,7 +40,7 @@ function Lottery({ lottery: { event, prize, currency, date, id, millis }, remove
           <tr>
             <td>
               <label>{currency}</label>
-              <label className="prize">{prize} </label>
+              <label className="jackpot">{jackpot} </label>
               <label>Million</label>
             </td>
           </tr>

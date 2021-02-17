@@ -14,8 +14,8 @@ function Form({ lotteries, clear, sort }) {
   return (
     <form onSubmit={handleSubmit}>
       <button title='Clear' disabled={empty} type='button' onClick={clear}>Clear</button>
-      <button title='Sort by prize' disabled={empty} type='button' onClick={() => sort('prize', false)}>Sort by prize</button>
-      <button title='Sort by closing time' disabled={empty} type='button' onClick={() => sort('millis', true)}>Sort by closing time</button>
+      <button title='Sort by prize' disabled={empty} type='button' onClick={() => sort('jackpot', false)}>Sort by prize</button>
+      <button title='Sort by closing time' disabled={empty} type='button' onClick={() => sort('closing', true)}>Sort by closing time</button>
       <input title='Submit' disabled={!empty} type='submit' value='Submit' />
     </form>
   );
