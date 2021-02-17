@@ -4,7 +4,7 @@ import Utils from '../../utils/Utils';
 import Actions from '../../store/actions/lotteries';
 import './index.css';
 
-function Lottery({ lottery: { event, jackpot, currency, closing, id }, remove }) {
+function Lottery({ lottery: { logo, event, jackpot, currency, closing, id }, remove }) {
 	const [timeLeft, setTimeLeft] = useState(closing - new Date().getTime());
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -35,7 +35,9 @@ function Lottery({ lottery: { event, jackpot, currency, closing, id }, remove })
       <table>
         <tbody>
           <tr>
-            <td>{event}</td>
+            <td>
+              <img src={logo} alt={event} title={event} />
+            </td>
           </tr>
           <tr>
             <td>

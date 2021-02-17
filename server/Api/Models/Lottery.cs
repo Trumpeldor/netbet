@@ -4,6 +4,8 @@ namespace Api.Models
 {
     public class Lottery
     {
+        public string Logo { get; set; }
+
         public string Event { get; set; }
 
         public int Jackpot { get; set; }
